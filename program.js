@@ -1,6 +1,6 @@
 /////////////////////////////////////
 //Name: Christian Alvarado
-//Filename: api.js
+//Filename: program.js
 //Editor: Visual Studio Code
 //Language: Javascript
 //Extension: Live server
