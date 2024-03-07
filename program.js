@@ -40,7 +40,7 @@ async function getResults(){
     .then(data => {
         const dataDisplay = document.getElementById('dataDisplay');
         const informationElement = document.createElement("p");
-        informationElement.textContent = "Info: " + JSON.stringify(data.results);
+        informationElement.textContent = JSON.stringify(data.results);
         dataDisplay.appendChild(informationElement);
         console.log(Object.values(data.results));
     })
