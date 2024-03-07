@@ -11,11 +11,16 @@
 /////////////////////////////////////
 
 //Defining API URL to call
-const url = "https://randomapi.com/api/6de6abfedb24f889e0b5f675edc50deb?fmt=json";
-//const dataDisplay = document.getElementById('dataDisplay');
 
 //Fetch function to make a GET request to API URL returning a promise
-fetch(url)
+async function getResults(){
+    const dataDisplay = document.getElementById('dataDisplay');
+    fetch("https://randomapi.com/api/6de6abfedb24f889e0b5f675edc50deb?fmt=json", {
+        method: 'GET',
+        headers:{
+            'Accept' : "application/json",
+        },
+    })
     //then method handles the asynchoronous response from server
     .then(response => {
         //checks to ensure response is valid
@@ -33,18 +38,19 @@ fetch(url)
     })
     //displaying the data onto the webpage
     .then(data => {
-        console.log(data);
         const dataDisplay = document.getElementById('dataDisplay');
         const informationElement = document.createElement("p");
         informationElement.textContent = "Info: " + JSON.stringify(data.results);
         dataDisplay.appendChild(informationElement);
-        console.log(data.results);
-        
+        console.log(Object.values(data.results));
     })
     //handle any errors that may occur
     .catch(error => {
         console.error('Error:', error);
     });
+}
+
+getResults();
 
 function compareFirstName(a, b){
     a = a.toLowerCase();
