@@ -9,13 +9,14 @@
         <script
             type = "module" src = "program.js">
         </script>
-        <label for = "myList"> Choose a Category:</label>
-            <select name = "myList" id = "myList">
-            <option value = "---Choose Category---">---Chooose Category---</option>
-            <option value = "First Name">First Name</option>
-            <option value = "Last Name">Last Name</option>
-            <option value = "Creation Date">Creation Date</option>
-            <option value = "Balance">Balance</option>
+        <form>
+            <label for = "myList"> Choose a Category:</label>
+            <select name = "myList" id = "myList" onchange="selectedValue()">
+                <option value = "---Choose Category---">---Chooose Category---</option>
+                <option value = "First Name">First Name</option>
+                <option value = "Last Name">Last Name</option>
+                <option value = "Creation Date">Creation Date</option>
+                <option value = "Balance">Balance</option>
             </select>
         </form>
         <div id = "dataDisplay">
